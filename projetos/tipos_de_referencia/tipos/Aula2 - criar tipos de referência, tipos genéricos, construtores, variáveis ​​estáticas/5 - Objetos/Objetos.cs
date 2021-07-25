@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace certificacao_csharp_roteiro
 {
@@ -10,8 +6,19 @@ namespace certificacao_csharp_roteiro
     {
         public void Executar()
         {
-            int pontuacao = 10;
+            int pontuacao = 20;
             Console.WriteLine($"pontuacao: {pontuacao}");
+
+            /*
+             * Object é o tipo  mais básico do C#, por definição é o ancestral de todas as classes
+             */
+
+            Object myObject = pontuacao;
+            Console.WriteLine($"pontuacao(myObject): {myObject}");
+
+            myObject = new Jogador();
+            Jogador jogador = (Jogador) myObject;//Em classes(Tipos de referencia) é preciso fazer um cast
+            Console.WriteLine($"jogador pontuacao: {jogador.Pontuacao}");
         }
     }
 
