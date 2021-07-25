@@ -1,7 +1,8 @@
-﻿using System;
+﻿using certificacao_csharp_roteiro;
+using System;
 using System.Collections.Generic;
 
-namespace certificacao_csharp_roteiro
+namespace TiposDeReferencia
 {
     class Program
     {
@@ -67,13 +68,13 @@ namespace certificacao_csharp_roteiro
         {
             return new List<MenuItem>
             {
-                new MenuItem("Tipos de Refêrencia", typeof(TiposDeReferencia)),
+                new MenuItem("Tipos de Refêrencia", typeof(certificacao_csharp_roteiro.TiposDeReferencia)),
                 new MenuItem("Classes", typeof(Classes)),
                 new MenuItem("Interfaces", typeof(Interfaces)),
                 new MenuItem("Delegates", typeof(Delegates)),
                 new MenuItem("Objetos", typeof(Objetos)),
                 new MenuItem("Dinâmicos", typeof(Dinamicos)),
-                new MenuItem("Strings", typeof(Strings)),               
+                new MenuItem("Strings", typeof(Strings)),
             };
         }
     }

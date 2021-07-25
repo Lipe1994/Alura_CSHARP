@@ -1,7 +1,8 @@
-﻿using System;
+﻿using certificacao_csharp_roteiro;
+using System;
 using System.Collections.Generic;
 
-namespace certificacao_csharp_roteiro
+namespace TiposDeValor
 {
     class Program
     {
@@ -67,13 +68,13 @@ namespace certificacao_csharp_roteiro
         {
             return new List<MenuItem>
             {
-                new MenuItem("Tipos de Valor", typeof(TiposDeValor)),
+                new MenuItem("Tipos de Valor", typeof(certificacao_csharp_roteiro.TiposDeValor)),
                 new MenuItem("Tipos Inteiros", typeof(TiposInteiros)),
                 new MenuItem("Ponto Flututante", typeof(PontoFlutuante)),
-                new MenuItem("Decimal", typeof(Decimal)),
+                new MenuItem("Decimal", typeof(certificacao_csharp_roteiro.Decimal)),
                 new MenuItem("Booleanos", typeof(Booleanos)),
                 new MenuItem("Estruturas", typeof(Estruturas)),
-                new MenuItem("Enumeracoes", typeof(Enumeracoes)),              
+                new MenuItem("Enumeracoes", typeof(Enumeracoes)),
             };
         }
     }
