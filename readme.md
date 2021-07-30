@@ -5,3 +5,5 @@
 	[Repositório tipos de Valor](./projetos/TiposDeValor/)
 	
 	[Repositório tipos de Referência](./projetos/TiposDeReferencia/)
+
+	[Repositório Classes e métodos](./projetos/ClassesEMetodos/)
