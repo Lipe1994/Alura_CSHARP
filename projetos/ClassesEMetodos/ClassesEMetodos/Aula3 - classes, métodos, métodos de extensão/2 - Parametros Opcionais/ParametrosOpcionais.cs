@@ -18,6 +18,7 @@ namespace certificacao_csharp_roteiro
 
     class ClienteEspecial
     {
+        
         private readonly string nome;
         public ClienteEspecial(string nome="Anônimo")
         {
