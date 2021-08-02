@@ -11,3 +11,5 @@
 	[Projeto com -> métodos sobrecarregados e métodos substituídos](./projetos/MetodosSobrecarregadosEMetodosSubstituidos/)
 
 	[Projeto com -> boxing e unboxing](./projetos/BoxingEUnboxing/)
+
+	[Projeto com -> CastDeTipos](./projetos/CastDeTipos/)
