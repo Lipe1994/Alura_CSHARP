@@ -10,16 +10,17 @@ namespace certificacao_csharp_roteiro
     {
         public void Executar()
         {
-            AnguloEmGraus anguloEmGraus = AnguloEmGraus.Converte(45);
+
+            AnguloEmGraus anguloEmGraus = 45;//Aqui está rolando um Cast implicito que eu defini através do 'static implicit operator' vide no exemplo da classe 'AnguloEmGraus'
             Console.WriteLine(anguloEmGraus);
 
-            AnguloEmRadianos anguloEmRadianos = AnguloEmRadianos.Converte(15);
+            AnguloEmRadianos anguloEmRadianos = 15;
             Console.WriteLine(anguloEmRadianos);
 
-            double graus = AnguloEmGraus.Converte(anguloEmGraus);
+            double graus = anguloEmGraus;
 
-            anguloEmRadianos = AnguloEmRadianos.Converte(anguloEmGraus);
-            anguloEmGraus = AnguloEmGraus.Converte(anguloEmRadianos);
+            anguloEmRadianos = anguloEmGraus;
+            anguloEmGraus = (AnguloEmGraus) anguloEmRadianos;//Aqui está rolando um Cast explicito que eu defini através do 'static explicit operator' vide no exemplo da classe 'AnguloEmGraus'
             System.Console.WriteLine($"anguloEmGraus: {anguloEmGraus}");
             System.Console.WriteLine($"anguloEmRadianos: {anguloEmRadianos}");
         }
@@ -34,12 +35,12 @@ namespace certificacao_csharp_roteiro
             this.Radianos = radianos;
         }
 
-        public static AnguloEmRadianos Converte(AnguloEmGraus graus)
+        public static implicit operator AnguloEmRadianos(AnguloEmGraus graus)
         {
             return new AnguloEmRadianos(graus.Graus * System.Math.PI / 180);
         }
 
-        public static AnguloEmRadianos Converte(double radianos)
+        public static implicit operator AnguloEmRadianos (double radianos)
         {
             return new AnguloEmRadianos(radianos);
         }
@@ -61,17 +62,17 @@ namespace certificacao_csharp_roteiro
 
         public AnguloEmGraus(double graus) { this.Graus = graus; }
 
-        public static AnguloEmGraus Converte(AnguloEmRadianos radianos)
+        public static explicit operator AnguloEmGraus(AnguloEmRadianos radianos)
         {
             return new AnguloEmGraus(radianos.Radianos * 180 / System.Math.PI);
         }
 
-        public static AnguloEmGraus Converte(double graus)
+        public static implicit operator AnguloEmGraus(double graus)
         {
             return new AnguloEmGraus(graus);
         }
 
-        public static double Converte(AnguloEmGraus graus)
+        public static implicit operator double(AnguloEmGraus graus)
         {
             return graus.Graus;
         }
