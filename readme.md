@@ -14,4 +14,4 @@
 
 	[Projeto com -> CastDeTipos](./projetos/CastDeTipos/)
 
-    [Projeto com -> CastDeTipos](./projetos/TiposDinamicos/)
+    [Projeto com -> Tipos dinâmicos](./projetos/TiposDinamicos/)
