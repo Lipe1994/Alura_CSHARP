@@ -32,7 +32,13 @@ namespace PropriedadesEAcessadores
 
         public decimal Salario //encapsulamento do campo salario
         {
-            get;
+            get{
+                return Salario;
+            }
+
+            // set{
+            //     Salario = value;
+            // }
         }
         
     }
