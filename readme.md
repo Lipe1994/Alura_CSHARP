@@ -15,3 +15,7 @@
 	[Projeto com -> CastDeTipos](./projetos/CastDeTipos/)
 
     [Projeto com -> Tipos dinâmicos](./projetos/TiposDinamicos/)
+
+    [Projeto com -> Propriedades e acessadores](./projetos/PropriedadesEAcessadores/)
+
+    [Projeto com -> Projetar interface](./projetos/ProjetarInterface/)
