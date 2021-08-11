@@ -11,16 +11,6 @@ namespace ClasseBase
             funcionario.Nome = "josé da silva";
             funcionario.DataNascimento = new DateTime(2000, 1, 1);
 
-            ((IFuncionario)funcionario).CargaHorariaMensal = 168;
-            ((IPlantonista)funcionario).CargaHorariaMensal = 32;
-            funcionario.EfeturarPagamento();
-            funcionario.CrachaGerado += (s, e) =>
-            {
-                Console.WriteLine("Crachá gerado");
-            };
-            ((IFuncionario)funcionario).GerarCracha();
-            ((IPlantonista)funcionario).GerarCracha();
-
 
             Cliente cliente = new Cliente
             {
@@ -64,7 +54,7 @@ namespace ClasseBase
         void GerarCracha();
     }
 
-    class Funcionario : Pessoa, IFuncionario, IPlantonista
+    class Funcionario : Pessoa, IFuncionario, IPlantonista 
     {
         public event EventHandler CrachaGerado;
 
@@ -101,7 +91,7 @@ namespace ClasseBase
         }
     }
 
-    sealed class Cliente : Pessoa
+    sealed class Cliente : Pessoa //Sealed define a classe como idisponível para ser herdada por outras classes.
     {
         public DateTime? DataUltimaCompra { get; set; }
         public decimal? ValorUltimaCompra { get; set; }
@@ -112,7 +102,7 @@ namespace ClasseBase
         }
     }
 
-    //class ClienteFilha : Cliente
+    //class ClienteFilha : Cliente //Dará erro porque cliente é uma classe selada
     //{
 
     //}
@@ -122,7 +112,7 @@ namespace ClasseBase
 
     //}
 
-    abstract class Pessoa
+    abstract class Pessoa //Abstract deixa a classe indisponivel para ser instanciada, só poderá ser herdada
     {
         public string CPF { get; set; }
         public string Nome { get; set; }
