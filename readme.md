@@ -25,4 +25,6 @@
 
 	[Projeto com -> Comparadores](./projetos/Comparacoes/)
 
+	[Projeto com -> Interface Explicita](./projetos/InterfaceExplicita/)
+
 	[Projeto com -> ClasseBase](./projetos/ClasseBase/)
