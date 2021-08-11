@@ -19,3 +19,10 @@
     [Projeto com -> Propriedades e acessadores](./projetos/PropriedadesEAcessadores/)
 
     [Projeto com -> Projetar interface](./projetos/ProjetarInterface/)
+
+
+- Dominando Classes e o fluxo de programa
+
+	[Projeto com -> Comparadores](./projetos/Comparacoes/)
+
+	[Projeto com -> ClasseBase](./projetos/ClasseBase/)

@@ -11,16 +11,30 @@ namespace InterfaceExplicita
             funcionario.Nome = "josé da silva";
             funcionario.DataNascimento = new DateTime(2000, 1, 1);
 
+            /*
+             Interfaces explicitas podem ser usadas quando a classe implementa mais de uma interface, e com membros de mesmo nome, vc pode usar uma técnica de Cast para 
+                referenciar as implementações
+             */
+
             ((IFuncionario)funcionario).CargaHorariaMensal = 168;
-            ((IPlantonista)funcionario).CargaHorariaMensal = 32;
+            ((IPlantonista)funcionario).CargaHorariaMensal = 30;
+
             funcionario.EfeturarPagamento();
             funcionario.CrachaGerado += (s, e) =>
             {
                 Console.WriteLine("Crachá gerado");
             };
+
+
             ((IFuncionario)funcionario).GerarCracha();
             ((IPlantonista)funcionario).GerarCracha();
         }
+    }
+
+    interface IPlantonista 
+    {
+        void GerarCracha();
+        int CargaHorariaMensal { get; set; }
     }
 
     interface IFuncionario
@@ -39,12 +53,6 @@ namespace InterfaceExplicita
         void EfeturarPagamento();
     }
 
-    interface IPlantonista
-    {
-        int CargaHorariaMensal { get; set; }
-        void GerarCracha();
-    }
-
     class Funcionario : IFuncionario, IPlantonista
     {
         public string CPF { get; set; }
@@ -53,16 +61,18 @@ namespace InterfaceExplicita
 
         public event EventHandler CrachaGerado;
 
-        void IFuncionario.GerarCracha()
+        void IFuncionario.GerarCracha() //Interfaces explicitas por definição são públicas então precisa  remover o modificador public
         {
+            Console.WriteLine("IFuncionario");
             if (CrachaGerado != null)
             {
                 CrachaGerado(this, new EventArgs());
             }
         }
-
-        void IPlantonista.GerarCracha()
+        void IPlantonista.GerarCracha() //Interfaces explicitas por definição são públicas então precisa  remover o modificador public
         {
+
+            Console.WriteLine("IPlantonista");
             if (CrachaGerado != null)
             {
                 CrachaGerado(this, new EventArgs());
@@ -71,9 +81,8 @@ namespace InterfaceExplicita
 
         public decimal Salario { get; }
 
-        int IFuncionario.CargaHorariaMensal { get; set; }
-
-        int IPlantonista.CargaHorariaMensal { get; set; }
+        int IFuncionario.CargaHorariaMensal { get; set; } //Interfaces explicitas por definição são públicas então precisa  remover o modificador public
+        int IPlantonista.CargaHorariaMensal { get; set; } //Interfaces explicitas por definição são públicas então precisa  remover o modificador public
 
         public Funcionario(decimal salario)
         {
