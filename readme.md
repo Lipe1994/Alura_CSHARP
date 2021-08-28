@@ -42,8 +42,8 @@
 	[Projeto com -> Padrão IDisposeble](./projetos/StringECicloDeVidaDeobjetos/Item01/01.4.IDisposable/)
 
 
-	[Projeto com -> StringBuilder]("./projetos/StringECicloDeVidaDeobjetos/Item02/02.1.string builder/")
+	[Projeto com -> StringBuilder](./projetos/StringECicloDeVidaDeobjetos/Item02/02.1.string\ builder/)
 
-	[Projeto com -> String Reader]("./projetos/StringECicloDeVidaDeobjetos/Item02/02.2.string reader/")
+	[Projeto com -> String Reader](./projetos/StringECicloDeVidaDeobjetos/Item02/02.2.string\ reader/)
 
-	[Projeto com -> String Writter]("./projetos/StringECicloDeVidaDeobjetos/Item02/02.3.string writer/")
+	[Projeto com -> String Writter](./projetos/StringECicloDeVidaDeobjetos/Item02/02.3.string\ writer/)
