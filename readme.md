@@ -32,3 +32,18 @@
 - Implementar fluxo de programa
 
 	[Projeto com -> Condicionais e operadores, condicionais de pré-compilação e simbolos de compilação](./projetos/CondicionaisEOperadores/)
+	
+	[Projeto com -> Tipos de valor e a memória Stack](./projetos/StringECicloDeVidaDeobjetos/Item01/01.1.TiposDeValor/)
+	
+	[Projeto com -> GC](./projetos/StringECicloDeVidaDeobjetos/Item01/01.2.Coleta/)
+	
+	[Projeto com -> Finalizador](./projetos/StringECicloDeVidaDeobjetos/Item01/01.3.Finalizador/)
+	
+	[Projeto com -> Padrão IDisposeble](./projetos/StringECicloDeVidaDeobjetos/Item01/01.4.IDisposable/)
+
+
+	[Projeto com -> StringBuilder]('./projetos/StringECicloDeVidaDeobjetos/Item02/02.1.string builder/')
+
+	[Projeto com -> String Reader]('./projetos/StringECicloDeVidaDeobjetos/Item02/02.2.string reader/')
+	
+	[Projeto com -> String Writter]('./projetos/StringECicloDeVidaDeobjetos/Item02/02.3.string writer/')
