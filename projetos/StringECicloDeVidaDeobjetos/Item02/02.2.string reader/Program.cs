@@ -13,6 +13,11 @@ namespace _02._2.string_reader
             //linha a linha.
             //2) Cada Linha deve começar com um caracter "•" e um espaço
 
+            /*
+             StringReader é uma herdeiro de TextReader, especializado em ler strings em formato de texto com quebras de linha,
+                ele carrega um texto e consegue entregar completo ou linha a linha
+             */
+
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             string ingredientes = GetIngredientes();

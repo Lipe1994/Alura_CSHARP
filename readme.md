@@ -47,3 +47,13 @@
 	[Projeto com -> String Reader](./projetos/StringECicloDeVidaDeobjetos/Item02/02.2.string%20reader/)
 
 	[Projeto com -> String Writter](./projetos/StringECicloDeVidaDeobjetos/Item02/02.3.string%20writer/)
+
+	
+
+	[Projeto com -> Pesquisa em Srings](./projetos/StringECicloDeVidaDeobjetos/Item02/02.4.pesquisa/)
+
+	[Projeto com -> Strings implementam contrato de IEnumerable](./projetos/StringECicloDeVidaDeobjetos/Item02/02.5.enumerar/)
+
+	[Projeto com -> Formatação](./projetos/StringECicloDeVidaDeobjetos/Item02/02.6%20formatar/)
+
+	[Projeto com -> Interpolação](./projetos/StringECicloDeVidaDeobjetos/Item02/02.7%20interpolacao/)

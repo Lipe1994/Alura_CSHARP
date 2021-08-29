@@ -17,7 +17,7 @@ namespace _02._5.enumerar
             //Char c = documento[0];
             //Console.WriteLine(c);
 
-            foreach (char c in documento)
+            foreach (var c in documento)
             {
                 if (char.IsUpper(c))
                 {

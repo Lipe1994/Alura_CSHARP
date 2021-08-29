@@ -48,8 +48,9 @@ namespace _02._4.pesquisa
             //lblDocumento: caixa de texto do Windows Forms
             var textoBusca = parametros.FirstOrDefault();
 
-            bool contem = lblDocumento.Text.ToUpper()
-                                .Contains(textoBusca.ToUpper());
+            bool contem = lblDocumento.Text
+                                .ToLower()
+                                .Contains(textoBusca.ToLower());
 
             if (contem)
             {
@@ -127,8 +128,14 @@ namespace _02._4.pesquisa
             var antigoTexto = parametros[0];
             var novoTexto = parametros[1];
 
-            lblDocumento.Text = 
+            lblDocumento.Text =
                 lblDocumento.Text.Replace(antigoTexto, novoTexto);
+
+
+            //var indice = lblDocumento.Text.IndexOf(antigoTexto);
+            //var inicioTexto = lblDocumento.Text.Substring(0, indice);
+            //var finalTexto = lblDocumento.Text.Substring(indice+antigoTexto.Length)
+            //lblDocumento.Text =  inicioTexto + novoTexto + finalTexto;
 
             return "Trecho substituído com sucesso.";
         }

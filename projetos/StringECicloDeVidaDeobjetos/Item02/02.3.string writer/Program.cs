@@ -14,6 +14,11 @@ namespace _02._3.string_writer
             //linha a linha.
             //2) Cada Linha deve começar com um caracter "•" e um espaço
 
+            /*
+                StringWritter é um herdeiro de de TextWriter, também consegue tratar da string em formato texto(assim como StringReader), Por baixo dos panos ele implementa um StringBuilder fazendo ele ser o ideal para o uso de muitas concatenações
+                e ao final ele pode entregar tudo com seu ToString
+             */
+
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             string ingredientes = GetIngredientes();
