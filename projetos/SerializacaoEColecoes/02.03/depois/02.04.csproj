@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>_02._01</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Slides\**" />
+    <EmbeddedResource Remove="Slides\**" />
+    <None Remove="Slides\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="image.png" />
+  </ItemGroup>
+
+</Project>
