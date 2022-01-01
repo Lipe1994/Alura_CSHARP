@@ -57,3 +57,9 @@
 	[Projeto com -> Formatação](./projetos/StringECicloDeVidaDeobjetos/Item02/02.6%20formatar/)
 
 	[Projeto com -> Interpolação](./projetos/StringECicloDeVidaDeobjetos/Item02/02.7%20interpolacao/)
+
+- Serialização
+
+	[Serialização](./projetos/SerializacaoEColecoes/)
+	
+	[Coleções](./projetos/SerializacaoEColecoes/)
