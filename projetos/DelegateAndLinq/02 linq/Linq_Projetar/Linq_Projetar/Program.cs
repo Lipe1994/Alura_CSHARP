@@ -54,7 +54,7 @@ namespace consultar
                                };
             Imprimir(queryFilmes3.ToList());
 
-            //Prejetando usando orderby
+            //Prejetando usando group by
             Console.WriteLine("\r\n \r\n");
             Console.WriteLine("Projetando usando group by");
             var queryFilmes4 = from f in filmes
@@ -63,9 +63,10 @@ namespace consultar
                                 into filmeVIntervalo
                                select new
                                {
-
+                                   MenorDuracao = filmeVIntervalo.Min(f => f.Minutos),
+                                   MaiorDuracao = filmeVIntervalo.Max(f => f.Minutos),
                                    Minutos = filmeVIntervalo.Sum(f => f.Minutos),
-                                   Nome = filmeVIntervalo.First().Titulo
+                                   Diretor = filmeVIntervalo.First().Diretor.Nome
                                };
             Imprimir2(queryFilmes4.ToList());
 
@@ -84,11 +85,11 @@ namespace consultar
 
         private static void Imprimir2(IEnumerable<dynamic> filmes)
         {
-            Console.WriteLine($"{"Diretor",-40} {"Tempo Total de filmes",10}");
+            Console.WriteLine($"{"Diretor",-40} {"Tempo Total de filmes",10} {"Min"} {"Max"}");
             Console.WriteLine(new string('=', 50));
             foreach (var filme in filmes)
             {
-                Console.WriteLine($"{filme.Nome,-40} {filme.Minutos,10}");
+                Console.WriteLine($"{filme.Diretor,-40} {filme.Minutos,10} {filme.MenorDuracao,10} {filme.MaiorDuracao,10}");
             }
         }
 
