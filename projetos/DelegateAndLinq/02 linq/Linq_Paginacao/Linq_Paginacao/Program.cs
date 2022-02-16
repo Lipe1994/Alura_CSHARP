@@ -1,14 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace _02_01
+namespace consultar
 {
     class Program
     {
         static void Main(string[] args)
         {
+
+            var filmes = GetFilmes();
+            var diretores = GetDiretores();
+
+            //Projetando objeto dynamic na consulta, Poderia ser criado um tipo só para este propósito também
+
+            var limite = 4;
+            var pagina = 0;
+
+            while (limite * pagina < filmes.Count())
+            {
+
+                var queryFilmes = from f in filmes
+                                  .Skip(pagina * limite)
+                                  .Take(limite)
+                                  select new
+                                  {
+                                      Titulo = f.Titulo,
+                                      Nome = f.Diretor.Nome,
+                                      Ano = f.Ano
+                                  };
+
+                pagina++;
+
+                Console.WriteLine("\r\n\r\n");
+                Imprimir(queryFilmes.ToList());
+
+            }
+
+
             Console.ReadKey();
         }
+
+        private static void Imprimir(IEnumerable<dynamic> filmes)
+        {
+            Console.WriteLine($"{"Título",-40} {"Diretor",-20} {"Ano",4}");
+            Console.WriteLine(new string('=', 64));
+            foreach (var filme in filmes)
+            {
+                Console.WriteLine($"{filme.Titulo,-40} {filme.Nome,-20} {filme.Ano,4}");
+            }
+        }
+
 
         private static List<Diretor> GetDiretores()
         {

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Xml.Linq;
 
-namespace _02_06
+namespace LinqXML
 {
     class Program
     {
@@ -23,7 +21,14 @@ namespace _02_06
                 "</Filme>" +
             "</Filmes>";
 
-            Console.ReadKey();
+            var query = XDocument.Parse(xmlText);
+
+            var filmes = query.Root;
+
+            foreach(var filme in filmes.Elements()) 
+            {
+                Console.WriteLine(filme.Element("Diretor").Value);
+            }
         }
     }
 }

@@ -1,139 +1,89 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
 
-namespace _02_03
+namespace consultar
 {
     class Program
     {
         static void Main(string[] args)
         {
+
             var filmes = GetFilmes();
             var diretores = GetDiretores();
 
-            var novoFilme = new Filme
+            //Projetando objeto dynamic na consulta, Poderia ser criado um tipo só para este propósito também
+            var queryFilmes = filmes.Select(f => new
             {
-                Titulo = "A Fantástica Fábrica de Chocolate",
-                Ano = 2005,
-                Diretor = new Diretor { Id = 3, Nome = "Tim Burton" },
-                DiretorId = 3,
-                Minutos = 115
-            };
+                Titulo = f.Titulo,
+                Nome = f.Diretor.Nome,
+                Ano = f.Ano
+            });
 
-            filmes.Add(novoFilme);
-
-            Console.WriteLine("\nTodos os filmes");
-            Console.WriteLine("===============");
-            Imprimir(filmes);
+            Imprimir(queryFilmes.ToList());
 
 
+            //Projetando usando Join
+            Console.WriteLine("\r\n \r\n");
+            Console.WriteLine("Projetando usando Join, onde diretor é o James C.");
+            var queryFilmes2 = filmes.Join(diretores, x => x.DiretorId, y => y.Id, (x, y) => new {
+                Titulo = x.Titulo,
+                Nome = y.Nome,
+                Ano = x.Ano
+            }).Where(f => f.Nome.Contains("Tim "));
 
-            Console.WriteLine("\nFiltrando por nome de diretor");
-            Console.WriteLine("=============================");
-            var consulta =
-                from f in filmes
-                where f.Diretor.Nome == "Tim Burton"
-                select f;
-
-            Imprimir(consulta);
-
-
-            Console.WriteLine("\nFiltrando e projetando resultado");
-            Console.WriteLine("================================");
-            var consulta2 =
-                from f in filmes
-                where f.Diretor.Nome == "Tim Burton"
-                select new FilmeResumido
-                {
-                    Titulo = f.Titulo,
-                    Diretor = f.Diretor.Nome
-                };
+            Imprimir(queryFilmes2.ToList());
 
 
-            Console.WriteLine("\nRelacionando duas sequências");
-            Console.WriteLine("============================");
 
-            var consulta4 =
-                from f in filmes
-                join d in diretores
-                    on f.DiretorId equals d.Id
-                where f.Diretor.Nome == "Tim Burton"
-                select new //OBJETO ANÔNIMO
-                {
-                    f.Titulo,
-                    Diretor = d.Nome
-                };
+            //Prejetando usando orderby
+            Console.WriteLine("\r\n \r\n");
+            Console.WriteLine("Projetando usando OrderBy no nome, ordem decrescente");
+            var queryFilmes3 = filmes.Join(diretores, x => x.DiretorId, y => y.Id, (x, y) => new {
+                Titulo = x.Titulo,
+                Nome = y.Nome,
+                Ano = x.Ano
+            }).OrderByDescending(f => f.Titulo);
 
-            Console.WriteLine($"{"Título",-40} {"Diretor",-20}");
-            Console.WriteLine(new string('=', 64));
-            foreach (var filme in consulta4)
+
+            Imprimir(queryFilmes3.ToList());
+
+            //Prejetando usando group by
+            Console.WriteLine("\r\n \r\n");
+            Console.WriteLine("Projetando usando group by");
+            var queryFilmes4 = filmes.Join(diretores, x => x.DiretorId, y => y.Id, (x, y) => { x.Diretor = y; return x; }).GroupBy(f => f.Diretor).Select(f => new
             {
-                Console.WriteLine($"{filme.Titulo,-40} {filme.Diretor,-20}");
-            }
-            Console.WriteLine();
+                MenorDuracao = f.Min(f => f.Minutos),
+                MaiorDuracao = f.Max(f => f.Minutos),
+                MediaDeDuracao = decimal.Round(((decimal)f.Average(f => f.Minutos)), 2),
+                Minutos = f.Sum(f => f.Minutos),
+                Diretor = f.First().Diretor.Nome,
+                QTDFilmes = f.Count()
+            });
 
-
-            Console.WriteLine("\nAgrupando consulta");
-            Console.WriteLine("==================");
-            var consulta5 =
-                from f in filmes
-                join d in diretores
-                    on f.DiretorId equals d.Id
-                group f by d
-                    into agrupado
-                select new //OBJETO ANÔNIMO
-                {
-                    Diretor = agrupado.Key,
-                    Quantidade = agrupado.Count(),
-                    Total = agrupado.Sum(f => f.Minutos),
-                    Min = agrupado.Min(f => f.Minutos),
-                    Max = agrupado.Max(f => f.Minutos),
-                    Media = (int)agrupado.Average(f => f.Minutos)
-                };
-
-            Console.WriteLine(
-                $"{"Nome",-30}" +
-                $"\t{"Qtd"}" +
-                $"\t{"Total"}" +
-                $"\t{"Min"}" +
-                $"\t{"Max"}" +
-                $"\t{"Media"}");
-            foreach (var item in consulta5)
-            {
-                Console.WriteLine(
-                    $"{item.Diretor.Nome,-30}" +
-                    $"\t{item.Quantidade}" +
-                    $"\t{item.Total}" +
-                    $"\t{item.Min}" +
-                    $"\t{item.Max}" +
-                    $"\t{item.Media}");
-            }
-
-
+            Imprimir2(queryFilmes4.ToList());
 
             Console.ReadKey();
         }
 
-        private static void Imprimir(IEnumerable<Filme> filmes)
+        private static void Imprimir(IEnumerable<dynamic> filmes)
         {
             Console.WriteLine($"{"Título",-40} {"Diretor",-20} {"Ano",4}");
             Console.WriteLine(new string('=', 64));
             foreach (var filme in filmes)
             {
-                Console.WriteLine($"{filme.Titulo,-40} {filme.Diretor.Nome,-20} {filme.Ano,4}");
+                Console.WriteLine($"{filme.Titulo,-40} {filme.Nome,-20} {filme.Ano,4}");
             }
         }
 
-        private static void Imprimir(IEnumerable<FilmeResumido> filmes)
+        private static void Imprimir2(IEnumerable<dynamic> filmes)
         {
-            Console.WriteLine($"{"Título",-40} {"Diretor",-20}");
-            Console.WriteLine(new string('=', 64));
+            Console.WriteLine($"{"Diretor",-40} {"Tempo Total de filmes",20} {"Média", 10} {"Min", 5} {"Max", 5} {"QTDFilmes", 5}");
+            Console.WriteLine(new string('=', 100));
             foreach (var filme in filmes)
             {
-                Console.WriteLine($"{filme.Titulo,-40} {filme.Diretor,-20}");
+                Console.WriteLine($"{filme.Diretor,-40} {filme.Minutos,20} {filme.MediaDeDuracao, 10} {filme.MenorDuracao, 5} {filme.MaiorDuracao, 5} {filme.QTDFilmes, 5}");
             }
-            Console.WriteLine();
         }
 
         private static List<Diretor> GetDiretores()
@@ -231,11 +181,5 @@ namespace _02_03
         public string Titulo { get; set; }
         public int Ano { get; set; }
         public int Minutos { get; set; }
-    }
-
-    class FilmeResumido
-    {
-        public string Titulo { get; set; }
-        public string Diretor { get; set; }
     }
 }

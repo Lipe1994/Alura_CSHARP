@@ -65,8 +65,10 @@ namespace consultar
                                {
                                    MenorDuracao = filmeVIntervalo.Min(f => f.Minutos),
                                    MaiorDuracao = filmeVIntervalo.Max(f => f.Minutos),
+                                   MediaDeDuracao = decimal.Round( ((decimal)filmeVIntervalo.Average(f => f.Minutos)), 2),
                                    Minutos = filmeVIntervalo.Sum(f => f.Minutos),
-                                   Diretor = filmeVIntervalo.First().Diretor.Nome
+                                   Diretor = filmeVIntervalo.First().Diretor.Nome,
+                                   QTDFilmes = filmeVIntervalo.Count()
                                };
             Imprimir2(queryFilmes4.ToList());
 
@@ -85,11 +87,11 @@ namespace consultar
 
         private static void Imprimir2(IEnumerable<dynamic> filmes)
         {
-            Console.WriteLine($"{"Diretor",-40} {"Tempo Total de filmes",10} {"Min"} {"Max"}");
-            Console.WriteLine(new string('=', 50));
+            Console.WriteLine($"{"Diretor",-40} {"Tempo Total de filmes",20} {"Média", 10} {"Min", 5} {"Max", 5} {"QTDFilmes", 5}");
+            Console.WriteLine(new string('=', 100));
             foreach (var filme in filmes)
             {
-                Console.WriteLine($"{filme.Diretor,-40} {filme.Minutos,10} {filme.MenorDuracao,10} {filme.MaiorDuracao,10}");
+                Console.WriteLine($"{filme.Diretor,-40} {filme.Minutos,20} {filme.MediaDeDuracao, 10} {filme.MenorDuracao, 5} {filme.MaiorDuracao, 5} {filme.QTDFilmes, 5}");
             }
         }
 
