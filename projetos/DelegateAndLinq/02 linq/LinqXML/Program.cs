@@ -60,7 +60,7 @@ namespace LinqXML
 
             query3.Add(new XElement("Titulo", "Teste"));
 
-            foreach (var f in query3.Descendants())
+            foreach (var f in query3.Descendants("Titulo"))
             {
                 Console.WriteLine(f.Value);
             }

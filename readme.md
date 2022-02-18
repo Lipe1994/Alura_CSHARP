@@ -63,3 +63,10 @@
 	[Serialização](./projetos/SerializacaoEColecoes/)
 	
 	[Coleções](./projetos/SerializacaoEColecoes/)
+
+	- Delegates/Events e Linq
+
+	[Delegates/Events](./projetos/DelegateAndLinq/)
+	
+	[Linq](./projetos/DelegateAndLinq/)
+
