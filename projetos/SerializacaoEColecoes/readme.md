@@ -1,23 +1,23 @@
 ## Serialização e Coleções
 
-	[SerializeJson](./SerializeJson/)
-	
-	[SerializerXML](./SerializerXML/)
+[SerializeJson](./SerializeJson/)
 
-	[SerializerBinario](./SerializerBinario/)
+[SerializerXML](./SerializerXML/)
 
-	[DataContractSerializer](./DataContractSerializer/)
+[SerializerBinario](./SerializerBinario/)
 
-	[DataContractSerializer02](./DataContractSerializer02/)
+[DataContractSerializer](./DataContractSerializer/)
 
-	[Arrays](./Arrays/)
+[DataContractSerializer02](./DataContractSerializer02/)
 
-	[Conjuntos](./Conjuntos/)
+[Arrays](./Arrays/)
 
-	[Dicionarios](./Dicionarios/)
+[Conjuntos](./Conjuntos/)
 
-	[Filas](./Filas/)
+[Dicionarios](./Dicionarios/)
 
-	[SortedList](./SortedList/)
+[Filas](./Filas/)
 
-	[CustomCollection](./CustomCollection/)
+[SortedList](./SortedList/)
+
+[CustomCollection](./CustomCollection/)
