@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Threads
 {
@@ -8,37 +7,36 @@ namespace Threads
     {
         static void Main(string[] args)
         {
-            var task = new Task(()=> ExecutaTrabalho(1));
-            task.Start();
-            task.Wait();
+            var thread1 = new Thread(Executar);
+            thread1.Start();
 
-            var task2 = Task.Run(() => ExecutaTrabalho(2) ); 
-            task2.Wait();
+            var thread2 = new Thread(()=> Executar());
+            thread2.Start();
 
-            var task3 = Task.Run<int>(() => {
-                var result = CalcularResultado(5, 2);
-                return result;
-            });
-            Console.WriteLine($"resultado trabalho 3: {task3.Result}");
 
-            Console.WriteLine("Término do processamento. Tecle [ENTER] para terminar.");
-            Console.ReadLine();
+            var thread3 = new Thread(ExecutarComParametro);
+            thread3.Start(123);
+
+            ParameterizedThreadStart param = new ParameterizedThreadStart((p)=> ExecutarComParametro(p));
+            var thread4 = new Thread(param);
+            thread4.Start(456);
         }
 
-        public static void ExecutaTrabalho(int item)
+
+
+        static void Executar()
         {
-            Console.WriteLine("Trabalho iniciado: {0}", item);
-            Thread.Sleep(2000);
-            Console.WriteLine("Trabalho terminado: {0}", item);
-            Console.WriteLine();
+            Console.WriteLine("Início da execução");
+            Thread.Sleep(1000);
+            Console.WriteLine("Fim da execução");
         }
 
-        public static int CalcularResultado(int numero1, int numero2)
+
+        static void ExecutarComParametro(object param)
         {
-            Console.WriteLine("Trabalho iniciado: 3");
-            Thread.Sleep(2000);
-            Console.WriteLine("Trabalho terminado: 3");
-            return numero1 + numero2;
+            Console.WriteLine("Início da execução: {0}", param);
+            Thread.Sleep(1000);
+            Console.WriteLine("Fim da execução: {0}", param);
         }
     }
 }
