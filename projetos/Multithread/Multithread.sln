@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryThreadSafe", "Dic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloqueandoTasks", "BloqueandoTasks\BloqueandoTasks.csproj", "{A42A9F85-F8AD-4AB8-9747-53897AB49822}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancelationTokenInTask", "CancelationTokenInTask\CancelationTokenInTask.csproj", "{FA58B89D-D53B-428F-A019-9DCFE929BF8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +121,10 @@ Global
 		{A42A9F85-F8AD-4AB8-9747-53897AB49822}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A42A9F85-F8AD-4AB8-9747-53897AB49822}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A42A9F85-F8AD-4AB8-9747-53897AB49822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA58B89D-D53B-428F-A019-9DCFE929BF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA58B89D-D53B-428F-A019-9DCFE929BF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA58B89D-D53B-428F-A019-9DCFE929BF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA58B89D-D53B-428F-A019-9DCFE929BF8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,6 +146,7 @@ Global
 		{68009841-DE81-4486-B378-CAFBC6521AC1} = {657FA065-4039-4368-987C-467A114A12C3}
 		{6C3B08CF-2216-48B8-B397-E9DF067651CC} = {657FA065-4039-4368-987C-467A114A12C3}
 		{A42A9F85-F8AD-4AB8-9747-53897AB49822} = {657FA065-4039-4368-987C-467A114A12C3}
+		{FA58B89D-D53B-428F-A019-9DCFE929BF8F} = {657FA065-4039-4368-987C-467A114A12C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4ED262F3-4D6B-4BFD-8509-EA5C5155429E}
