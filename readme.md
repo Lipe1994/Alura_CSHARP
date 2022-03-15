@@ -70,3 +70,35 @@
 	
 	[Linq](./projetos/DelegateAndLinq/)
 
+- MultiThread
+
+	[Parallel](./projetos/Multithread/Parallel/)
+
+	[PLinq](./projetos/Multithread/PLinq/)
+
+	[StateParallel](./projetos/Multithread/StateParallel/)
+	
+	[Tasks](./projetos/Multithread/Tasks/)
+
+	[CancelationToken In Task](./projetos/Multithread/CancelationTokenInTask/)
+
+	[Threads](./projetos/Multithread/Threads/)
+
+	[ThreadInfo](./projetos/Multithread/ThreadInfo/)
+
+	[Threads Sincronia](./projetos/Multithread/ThreadsSincronia/)
+
+	[Orquestrando Tarefas](./projetos/Multithread/OrquestrandoTarefas/)
+
+	[HierarquiaDeTarefas](./projetos/Multithread/HierarquiaDeTarefas/)
+
+	[Espera Continuacao E Hierarquia](./projetos/Multithread/EsperaContinuacaoEHierarquia/)
+
+	[Dictionary Thread Safe](./projetos/Multithread/DictionaryThreadSafe/)
+
+	[Consultas Paralelas](./projetos/Multithread/ConsultasParalelas/)
+
+	[Bloqueando Threads](./projetos/Multithread/BloqueandoThreads/)
+
+	[Bloqueando Tasks](./projetos/Multithread/BloqueandoTasks/)
+
