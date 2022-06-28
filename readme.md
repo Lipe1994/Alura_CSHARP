@@ -105,4 +105,4 @@
 
 - Depurar Aplicativos
 
-	[Parallel](./projetos/DepurarAplicativos/)
+	[AssemberName, diretivas de compilação, attributos](./projetos/DepurarAplicativos/)
