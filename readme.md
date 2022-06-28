@@ -102,3 +102,7 @@
 
 	[Bloqueando Tasks](./projetos/Multithread/BloqueandoTasks/)
 
+
+- Depurar Aplicativos
+
+	[Parallel](./projetos/DepurarAplicativos/)
