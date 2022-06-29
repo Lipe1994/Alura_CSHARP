@@ -106,6 +106,9 @@
 - Depurar Aplicativos
 
 	[AssemberName, diretivas de compilação, attributos](./projetos/DepurarAplicativos/simbolos_de_pre_compilacao_debugger/)
+
 	[Usando Trace para rastrear em arquivo](./projetos/DepurarAplicativos/rastreamento/)
+
 	[Usando Trace para rastrear no visualizador de eventos do windows](./projetos/DepurarAplicativos/rastreamento_windows/)
+	
 
