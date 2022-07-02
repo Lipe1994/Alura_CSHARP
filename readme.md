@@ -115,5 +115,11 @@
 - Trabalhando com Generics
 
 	[Atributos e generics](./projetos/Generics/Atributos/)
+
+	[Usando CodeDom](./projetos/Generics/UsandoCodeDOM/)
+
+	[Linq Expressions](./projetos/Generics/LinqExpressions/)
+
+	[+Reflection](./projetos/Generics/BrincandoComReflection/)
 	
 
